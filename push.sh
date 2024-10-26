@@ -1,5 +1,3 @@
-git init
-sleep 1
 git add .
 sleep 1
 git commit -m update
