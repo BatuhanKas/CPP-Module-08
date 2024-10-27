@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 10:52:17 by bkas              #+#    #+#             */
-/*   Updated: 2024/10/26 17:10:27 by bkas             ###   ########.fr       */
+/*   Updated: 2024/10/27 15:52:32 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <limits.h>
+#include <sys/time.h>
 
 /* **************************** [^] INCLUDES [^] **************************** */
 
@@ -79,6 +81,8 @@ class Span {
         // Print Function
         void printNumbers();
 };
+
+unsigned long getMs();
 
 /* ************************* [^] PRINT NUMBERS [^] ************************* */
 

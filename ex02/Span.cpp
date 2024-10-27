@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 12:36:33 by bkas              #+#    #+#             */
-/*   Updated: 2024/10/26 17:35:09 by bkas             ###   ########.fr       */
+/*   Updated: 2024/10/27 14:57:07 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ void Span::bubblesort() {
         {
             if (_numbers[i] > _numbers[j]) {
                 std::swap(_numbers[i], _numbers[j]);
-            }
+            } 
         }
     }
 }
@@ -125,7 +125,7 @@ void Span::bubblesort() {
 unsigned int Span::shortestSpan() {
     if (getSize() > 1) {
         bubblesort();
-        
+
         unsigned int minSpan = INT_MAX;
         for (size_t i = 1; i < getSize() ; i++)
         {
@@ -134,10 +134,8 @@ unsigned int Span::shortestSpan() {
                 minSpan = span;
         }
         return minSpan;
-    } else {
+    } else
         throw std::length_error("Less Elements!");
-    }
-    return 0;
 }
 
 /* ************************* [^] SHORTEST SPAN [^] ************************* */
@@ -145,14 +143,27 @@ unsigned int Span::shortestSpan() {
 /* ************************* [v] LONGEST SPAN [v] ************************* */
 
 unsigned int Span::longestSpan() {
-    if (getSize() > 1) 
+    if (getSize() > 1)
     {
         bubblesort();
         return (_numbers[_numbers.size() - 1]) - _numbers[0];
     } 
     else
         throw std::length_error("Less Elements!");
-    return 0;
 }
 
 /* ************************* [^] LONGEST SPAN [^] ************************* */
+
+/* *********************** [v] GET TIME OF DAY [v] *********************** */
+
+unsigned long getMs() { /*
+    1 second = 1000 milisecond.
+    1 microsecond = 0.001 milisecond.
+
+    changing both of them miliseconds. */
+    struct timeval tv;
+    gettimeofday(&tv, NULL);
+    return (tv.tv_sec * 1000 + tv.tv_usec / 1000);
+}
+
+/* *********************** [^] GET TIME OF DAY [^] *********************** */
