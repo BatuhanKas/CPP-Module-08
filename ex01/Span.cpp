@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 12:36:33 by bkas              #+#    #+#             */
-/*   Updated: 2024/10/27 15:57:15 by bkas             ###   ########.fr       */
+/*   Updated: 2024/10/28 11:17:45 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,46 @@
 #include "Span.hpp"
 
 /* **************************** [^] INCLUDES [^] **************************** */
+
+/* ***************************** [v] GETTERS [v] ***************************** */
+
+unsigned int Span::getSize() const {
+    return _nsize;
+}
+
+unsigned int Span::getN() const { 
+    return _N;
+}
+
+vector<unsigned int> Span::getArray() const {
+    return _numbers;
+}
+
+/* ***************************** [^] GETTERS [^] ***************************** */
+
+/* ************************** [v] ORTHODOX FORM [v] ************************** */
+
+Span::Span() {}
+
+Span::Span(unsigned int N) : _nsize(0), _N(N) {}
+
+Span::Span(const Span& oth) {
+    *this = oth;
+}
+
+Span &Span::operator=(const Span& oth) {
+    if (this == &oth) return *this;
+    this->_nsize = oth.getSize();
+    this->_N = oth.getN();
+    this->_numbers = oth.getArray();
+    return *this;
+}
+
+Span::~Span() {
+    getArray().clear();
+}
+
+/* ************************** [^] ORTHODOX FORM [^] ************************** */
 
 /* ************************* [v] PRINT NUMBERS [v] ************************* */
 
@@ -63,46 +103,6 @@ void Span::addNumbers(iter begin, iter end) {
 }
 
 /* ************************** [^] ADD NUMBERS [^] ************************** */
-
-/* ***************************** [v] GETTERS [v] ***************************** */
-
-unsigned int Span::getSize() const {
-    return _nsize;
-}
-
-unsigned int Span::getN() const { 
-    return _N;
-}
-
-vector<unsigned int> Span::getArray() const {
-    return _numbers;
-}
-
-/* ***************************** [^] GETTERS [^] ***************************** */
-
-/* ************************** [v] ORTHODOX FORM [v] ************************** */
-
-Span::Span() {}
-
-Span::Span(unsigned int N) : _nsize(0), _N(N) {}
-
-Span::Span(const Span& oth) {
-    *this = oth;
-}
-
-Span &Span::operator=(const Span& oth) {
-    if (this == &oth) return *this;
-    this->_nsize = oth.getSize();
-    this->_N = oth.getN();
-    this->_numbers = oth.getArray();
-    return *this;
-}
-
-Span::~Span() {
-    getArray().clear();
-}
-
-/* ************************** [^] ORTHODOX FORM [^] ************************** */
 
 /* *************************** [v] BUBBLESORT [v] *************************** */
 

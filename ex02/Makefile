@@ -1,10 +1,10 @@
-NAME = span
+NAME = stack
 
 RM = rm -rf
 CC = c++
 CFLAGS = -g -Wall -Wextra -Werror -std=c++98 -pedantic
 
-SRCS = main.cpp Span.cpp
+SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
@@ -28,6 +28,6 @@ r: re
 f: fclean
 
 v: f all
-	valgrind ./$(NAME) --leak-check=full 
+	valgrind ./$(NAME) --leak-check=full
 
 .PHONY: all clean fclean r re f c v
