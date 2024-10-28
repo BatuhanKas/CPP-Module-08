@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 10:52:17 by bkas              #+#    #+#             */
-/*   Updated: 2024/10/28 14:48:37 by bkas             ###   ########.fr       */
+/*   Updated: 2024/10/28 15:38:14 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@
 /* **************************** [v] INCLUDES [v] **************************** */
 
 #include <iostream>
-#include <algorithm>
 #include <stack>
 #include <deque>
-#include <vector>
 
 /* **************************** [^] INCLUDES [^] **************************** */
 
@@ -28,7 +26,6 @@
 using std::cout;
 using std::endl;
 using std::string;
-using std::vector;
 using std::deque;
 using std::stack;
 
